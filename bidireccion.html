@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>202-AngularJS</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- ANgular CDN -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
+
+	<script src="assets/js/controllers/telefonos.js"></script>
+
+</head>
+<body ng-app>
+	<div class="container">
+		<h1>AngularJS</h1>
+		<p>
+			AngularJs Tutorial para la UCO
+		</p>
+
+		<div>
+			<input type="text" placeholder="Ingresa un nombre" ng-model="nombre">
+		</div>
+		<div><span>Hola {{nombre}}</span></div>
+		<div><input type="checkbox" ng-model="chequeado"></input></div>
+		<div><span>El input esta {{chequeado}}</span></div>
+		<div>1 + 2 = {{ 1 + 2 }}</div>
+	</div>
+
+
+</body>
+</html>

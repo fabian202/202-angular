@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp">
+<head>
+	<meta charset="UTF-8">
+	<title>202 AngularJS Controllers</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- ANgular CDN -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
+	<script src="assets/js/controllers/telefonos.js"></script>
+
+</head>
+<body>
+	<div class="container" ng-controller="PhoneListCtrl">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<!--Sidebar content-->
+
+					Search: <input ng-model="query">
+					Sort by:
+					<select ng-model="orderProp">
+						<option value="name">Alphabetical</option>
+						<option value="age">Newest</option>
+					</select>
+
+
+				</div>
+				<div class="col-md-10">
+					<!--Body content-->
+
+					<ul class="phones">
+						<li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+							{{phone.name}}							
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th><a href="" ng-click="ordenar('-nombre')">Nombre</a><span class="caret"></span></th>
+						<th>Apellido</th>
+						<th>Email</th>
+						<th>Salario</th>
+						<th>Ingreso</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="e in empleados | orderBy:orderGrid | filter:query"> 	
+						<td>{{e.nombre | uppercase}}</td>
+						<td>{{e.apellido | lowercase}}</td>
+						<td>{{e.email}}</td>
+						<td>{{e.salario | currency}}</td>
+						<td>{{e.ingreso | date}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+
+	</div>	
+</body>
+</html>
